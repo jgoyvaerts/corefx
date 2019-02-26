@@ -15,6 +15,9 @@ internal static partial class Interop
         [DllImport(Libraries.CryptoNative, EntryPoint = "CryptoNative_GetX509NameStackFieldCount")]
         internal static extern int GetX509NameStackFieldCount(SafeSharedX509NameStackHandle sk);
 
+        [DllImport(Libraries.CryptoNative, EntryPoint = "CryptoNative_DuplicateX509Name")]
+        internal static extern SafeX509NameHandle DuplicateX509Name(IntPtr x509Name);
+
         [DllImport(Libraries.CryptoNative, EntryPoint = "CryptoNative_GetX509NameStackField")]
         private static extern SafeSharedX509NameHandle GetX509NameStackField_private(SafeSharedX509NameStackHandle sk,
             int loc);

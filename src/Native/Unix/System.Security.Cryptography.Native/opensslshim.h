@@ -405,6 +405,7 @@ extern "C" void SSL_get0_alpn_selected(const SSL* ssl, const unsigned char** pro
     LIGHTUP_FUNCTION(SSL_CTX_set_alpn_select_cb) \
     REQUIRED_FUNCTION(SSL_CTX_set_cert_verify_callback) \
     REQUIRED_FUNCTION(SSL_CTX_set_cipher_list) \
+    REQUIRED_FUNCTION(SSL_CTX_set_client_CA_list) \
     REQUIRED_FUNCTION(SSL_CTX_set_client_cert_cb) \
     REQUIRED_FUNCTION(SSL_CTX_set_quiet_shutdown) \
     FALLBACK_FUNCTION(SSL_CTX_set_options) \
@@ -467,6 +468,7 @@ extern "C" void SSL_get0_alpn_selected(const SSL* ssl, const unsigned char** pro
     FALLBACK_FUNCTION(X509_get0_pubkey_bitstr) \
     FALLBACK_FUNCTION(X509_get0_tbs_sigalg) \
     REQUIRED_FUNCTION(X509_issuer_name_hash) \
+    REQUIRED_FUNCTION(X509_NAME_dup) \
     REQUIRED_FUNCTION(X509_NAME_entry_count) \
     REQUIRED_FUNCTION(X509_NAME_ENTRY_get_data) \
     REQUIRED_FUNCTION(X509_NAME_ENTRY_get_object) \
@@ -755,6 +757,7 @@ FOR_ALL_OPENSSL_FUNCTIONS
 #define SSL_CTX_set_alpn_select_cb SSL_CTX_set_alpn_select_cb_ptr
 #define SSL_CTX_set_cert_verify_callback SSL_CTX_set_cert_verify_callback_ptr
 #define SSL_CTX_set_cipher_list SSL_CTX_set_cipher_list_ptr
+#define SSL_CTX_set_client_CA_list SSL_CTX_set_client_CA_list_ptr
 #define SSL_CTX_set_client_cert_cb SSL_CTX_set_client_cert_cb_ptr
 #define SSL_CTX_set_options SSL_CTX_set_options_ptr
 #define SSL_CTX_set_quiet_shutdown SSL_CTX_set_quiet_shutdown_ptr
@@ -819,6 +822,7 @@ FOR_ALL_OPENSSL_FUNCTIONS
 #define X509_get_X509_PUBKEY X509_get_X509_PUBKEY_ptr
 #define X509_get_version X509_get_version_ptr
 #define X509_issuer_name_hash X509_issuer_name_hash_ptr
+#define X509_NAME_dup X509_NAME_dup_ptr
 #define X509_NAME_entry_count X509_NAME_entry_count_ptr
 #define X509_NAME_ENTRY_get_data X509_NAME_ENTRY_get_data_ptr
 #define X509_NAME_ENTRY_get_object X509_NAME_ENTRY_get_object_ptr
